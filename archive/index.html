@@ -1,332 +1,271 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang=ko>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>찾았dot 아카이브 | 두다닷</title>
+<meta charset=utf-8>
+<meta name=viewport content=width=device-width, initial-scale=1>
+<title>찾았dot 아카이브 | 두다닷</title>
+<style>
+:root {
+  --green: #03c75a;
+  --yellow: #ffd84d;
+  --black: #111111;
+  --gray-700: #555555;
+  --gray-300: #dddddd;
+  --gray-100: #f5f5f5;
+  --cream: #fffdf4;
+  --white: #ffffff;
+  --radius: 18px;
+}
 
-  <style>
-    :root {
-      --green: #03c75a;
-      --yellow: #ffd84d;
-      --black: #111111;
-      --gray-700: #555555;
-      --gray-300: #dddddd;
-      --gray-100: #f5f5f5;
-      --cream: #fffdf4;
-      --white: #ffffff;
-      --radius: 18px;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+  background: var(--cream);
+  color: var(--black);
+  line-height: 1.6;
+  word-break: keep-all;
+}
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--cream);
-      color: var(--black);
-      line-height: 1.6;
-      word-break: keep-all;
-    }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+.page {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: 18px 16px 40px;
+}
 
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 8px;
-      background: var(--black);
-      color: var(--white);
-      padding: 10px 14px;
-      border-radius: 8px;
-      z-index: 999;
-    }
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
 
-    .skip-link:focus {
-      left: 8px;
-    }
+.top-link {
+  padding: 8px 10px;
+  border: 1px solid var(--gray-300);
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 14px;
+  font-weight: 800;
+}
 
-    .page {
-      width: min(100%, 720px);
-      margin: 0 auto;
-      padding: 18px 16px 40px;
-    }
+.hero {
+  padding: 22px 18px 20px;
+  border: 2px solid var(--black);
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: 6px 6px 0 var(--black);
+}
 
-    .top-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-      font-size: 14px;
-      font-weight: 800;
-    }
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  background: var(--yellow);
+  border: 2px solid var(--black);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 850;
+  margin-bottom: 12px;
+}
 
-    .top-nav a {
-      padding: 8px 10px;
-      border: 1px solid var(--gray-300);
-      border-radius: 999px;
-      background: var(--white);
-    }
+h1 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
 
-    .hero {
-      padding: 22px 18px 20px;
-      border: 2px solid var(--black);
-      border-radius: 24px;
-      background: var(--white);
-      box-shadow: 6px 6px 0 var(--black);
-    }
+.hero p {
+  margin: 10px 0 0;
+  color: var(--gray-700);
+  font-size: 16px;
+  font-weight: 650;
+}
 
-    .badge {
-      display: inline-block;
-      padding: 5px 10px;
-      background: var(--yellow);
-      border: 2px solid var(--black);
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 850;
-      margin-bottom: 12px;
-    }
+.button {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 15px 16px;
+  border: 2px solid var(--black);
+  border-radius: 14px;
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  font-size: 17px;
+  font-weight: 850;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 32px;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-    }
+.guide {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  background: var(--white);
+}
 
-    .hero p {
-      margin: 10px 0 0;
-      color: var(--gray-700);
-      font-size: 16px;
-      font-weight: 650;
-    }
+.guide h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
 
-    .button {
-      display: block;
-      width: 100%;
-      margin-top: 12px;
-      padding: 15px 16px;
-      border: 2px solid var(--black);
-      border-radius: 14px;
-      background: var(--black);
-      color: var(--white);
-      text-align: center;
-      font-size: 17px;
-      font-weight: 850;
-    }
+.guide p {
+  margin: 0;
+  color: var(--gray-700);
+  font-size: 15px;
+}
 
-    .button.secondary {
-      background: var(--white);
-      color: var(--black);
-    }
+.archive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 18px;
+}
 
-    .guide {
-      margin-top: 18px;
-      padding: 16px;
-      border: 1px solid var(--gray-300);
-      border-radius: var(--radius);
-      background: var(--white);
-    }
+@media (min-width: 640px) {
+  .archive-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
-    .guide h2 {
-      margin: 0 0 8px;
-      font-size: 20px;
-      letter-spacing: -0.03em;
-    }
+.archive-card {
+  overflow: hidden;
+  border: 2px solid var(--black);
+  border-radius: 20px;
+  background: var(--white);
+}
 
-    .guide p {
-      margin: 0;
-      color: var(--gray-700);
-      font-size: 15px;
-    }
+.archive-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--gray-100);
+  border-bottom: 2px solid var(--black);
+}
 
-    .archive-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 18px;
-    }
+.card-body {
+  padding: 14px;
+}
 
-    @media (min-width: 640px) {
-      .archive-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
 
-    .archive-card {
-      overflow: hidden;
-      border: 2px solid var(--black);
-      border-radius: 20px;
-      background: var(--white);
-    }
+.chip {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--gray-100);
+  font-size: 13px;
+  font-weight: 800;
+}
 
-    .archive-card img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      background: var(--gray-100);
-      border-bottom: 2px solid var(--black);
-    }
+.chip.green {
+  background: var(--green);
+  color: var(--black);
+}
 
-    .card-body {
-      padding: 14px;
-    }
+.archive-card h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+}
 
-    .card-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 8px;
-    }
+.archive-card p {
+  margin: 0;
+  color: var(--gray-700);
+  font-size: 15px;
+}
 
-    .chip {
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: var(--gray-100);
-      font-size: 13px;
-      font-weight: 800;
-    }
+.empty-note {
+  margin-top: 18px;
+  padding: 18px;
+  border: 2px dashed var(--gray-300);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--gray-700);
+  text-align: center;
+  font-weight: 700;
+}
 
-    .chip.green {
-      background: var(--green);
-      color: var(--black);
-    }
+footer {
+  margin-top: 24px;
+  padding: 16px;
+  text-align: center;
+  color: var(--gray-700);
+  font-size: 14px;
+}
 
-    .archive-card h2 {
-      margin: 0 0 6px;
-      font-size: 20px;
-      line-height: 1.35;
-      letter-spacing: -0.03em;
-    }
-
-    .archive-card p {
-      margin: 0;
-      color: var(--gray-700);
-      font-size: 15px;
-    }
-
-    .empty-note {
-      margin-top: 18px;
-      padding: 18px;
-      border: 2px dashed var(--gray-300);
-      border-radius: var(--radius);
-      background: var(--white);
-      color: var(--gray-700);
-      text-align: center;
-      font-weight: 700;
-    }
-
-    .footer {
-      margin-top: 24px;
-      padding: 16px;
-      text-align: center;
-      color: var(--gray-700);
-      font-size: 14px;
-    }
-
-    .footer strong {
-      color: var(--black);
-    }
-  </style>
+footer strong {
+  color: var(--black);
+}
+</style>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">본문으로 바로가기</a>
 
-  <main id="main" class="page">
-    <nav class="top-nav" aria-label="페이지 이동">
-      <a href="index.html">← 메인으로</a>
-      <a href="braille.html">점자 읽기</a>
-    </nav>
+<main id=main class=page>
 
-    <section class="hero" aria-labelledby="page-title">
-      <div class="badge">#찾았dot 아카이브</div>
-      <h1 id="page-title">일상 속 점자 기록</h1>
-      <p>여러 사람이 발견한 점자의 위치와 이야기를 모아두는 공간입니다.</p>
-      <a class="button" href="폼주소를_여기에_넣기" target="_blank" rel="noopener noreferrer">나도 점자 기록하기 →</a>
-    </section>
+<a class=top-link href=index.html>← 메인으로</a>
+<a class=top-link href=braille.html>점자 읽기</a>
+<div class=badge>#찾았dot 아카이브</div>
+<h1 id=page-title>일상 속 점자 기록</h1>
+<p>여러 사람이 발견한 점자의 위치와 이야기를 모아두는 공간입니다.</p>
+<a class=button href=https://naver.me/Fx29UT4F<a class=button href=https://naver.me/Fx29UT4F>나도 점자 기록하기 →</a>나도 점자 기록하기 →</a>
+<h2 id=guide-title>아카이브 안내</h2>
+<p>제출된 사진은 두다닷에서 확인한 뒤 일부를 선별해 게시합니다. 개인정보나 얼굴이 보이는 사진은 공개하지 않는 것을 원칙으로 합니다.</p>
+<div class=empty-note>새 기록은 이 페이지에 카드 형태로 차례대로 추가됩니다.</div>
+<p><strong>DODADOT 두다닷</strong></p>
+<p>문의: dodadot@naver.com</p>
 
-    <section class="guide" aria-labelledby="guide-title">
-      <h2 id="guide-title">아카이브 안내</h2>
-      <p>제출된 사진은 두다닷에서 확인한 뒤 일부를 선별해 게시합니다. 개인정보나 얼굴이 보이는 사진은 공개하지 않는 것을 원칙으로 합니다.</p>
-    </section>
+<section class=archive-grid aria-label=찾았dot 아카이브 목록>
 
-    <section class="archive-grid" aria-label="찾았dot 아카이브 목록">
-      <!-- 카드 1개를 복사해서 아래에 계속 추가하면 됩니다. -->
+<article class=archive-card>
+<img src=images/archive-sample-01.jpg alt=자판기 버튼 주변에 부착된 점자 사진>
+<div class=card-body>
+<div class=card-meta>
+<span class=chip green>자판기</span>
+<span class=chip>대구</span>
+<span class=chip>2025.05</span>
+</div>
+<h2>지하철역 자판기에서 발견한 점자</h2>
+<p>음료 선택 버튼 주변에 점자가 붙어 있었어요. 누구나 더 쉽게 읽을 수 있도록 위치와 상태를 함께 기록합니다.</p>
+</div>
+</article>
+<article class=archive-card>
+<img src=images/archive-sample-02.jpg alt=엘리베이터 버튼 옆 점자 표기 사진>
+<div class=card-body>
+<div class=card-meta>
+<span class=chip green>엘리베이터</span>
+<span class=chip>일상공간</span>
+<span class=chip>2025.05</span>
+</div>
+<h2>엘리베이터 버튼 옆 점자</h2>
+<p>자주 지나치는 공간에서도 점자를 발견할 수 있어요. 발견한 점자를 사진과 장소로 남겨주세요.</p>
+</div>
+</article>
 
-      <article class="archive-card">
-        <img src="images/archive-sample-01.jpg" alt="자판기 버튼 주변에 부착된 점자 사진" />
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="chip green">자판기</span>
-            <span class="chip">대구</span>
-            <span class="chip">2025.05</span>
-          </div>
-          <h2>지하철역 자판기에서 발견한 점자</h2>
-          <p>음료 선택 버튼 주변에 점자가 붙어 있었어요. 누구나 더 쉽게 읽을 수 있도록 위치와 상태를 함께 기록합니다.</p>
-        </div>
-      </article>
+</section>
 
-      <article class="archive-card">
-        <img src="images/archive-sample-02.jpg" alt="엘리베이터 버튼 옆 점자 표기 사진" />
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="chip green">엘리베이터</span>
-            <span class="chip">일상공간</span>
-            <span class="chip">2025.05</span>
-          </div>
-          <h2>엘리베이터 버튼 옆 점자</h2>
-          <p>자주 지나치는 공간에서도 점자를 발견할 수 있어요. 발견한 점자를 사진과 장소로 남겨주세요.</p>
-        </div>
-      </article>
+</main>
 
-      <article class="archive-card">
-        <img src="images/archive-sample-03.jpg" alt="생활용품 포장지에 표시된 점자 사진" />
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="chip green">생활용품</span>
-            <span class="chip">포장재</span>
-            <span class="chip">2025.05</span>
-          </div>
-          <h2>포장지에서 발견한 점자</h2>
-          <p>작은 표기 하나가 누군가에게는 중요한 정보가 됩니다. 찾았dot은 이런 발견을 모아갑니다.</p>
-        </div>
-      </article>
-
-      <article class="archive-card">
-        <img src="images/archive-sample-04.jpg" alt="공공시설 안내판에 표시된 점자 사진" />
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="chip green">공공시설</span>
-            <span class="chip">안내판</span>
-            <span class="chip">2025.05</span>
-          </div>
-          <h2>공공시설 안내판의 점자</h2>
-          <p>점자가 어디에 있고 어떤 상태인지 함께 기록하면 접근성 개선을 위한 자료가 됩니다.</p>
-        </div>
-      </article>
-    </section>
-
-    <div class="empty-note">
-      새 기록은 이 페이지에 카드 형태로 차례대로 추가됩니다.
-    </div>
-
-    <footer class="footer">
-      <p><strong>DODADOT 두다닷</strong></p>
-      <p>문의: dodadot@naver.com</p>
-    </footer>
-  </main>
 </body>
 </html>
