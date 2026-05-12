@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang=ko>
+<html lang="ko">
 <head>
-<meta charset=utf-8>
-<meta name=viewport content=width=device-width, initial-scale=1>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>찾았dot 아카이브 | 두다닷</title>
 <style>
 :root {
@@ -23,7 +23,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--cream);
   color: var(--black);
   line-height: 1.6;
@@ -219,53 +219,72 @@ footer strong {
   color: var(--black);
 }
 </style>
+.footer {
+  margin-top: 24px;
+  padding: 16px;
+  text-align: center;
+  color: var(--gray-700);
+  font-size: 14px;
+}
+
+.footer strong {
+  color: var(--black);
+}
 </head>
 <body>
+<main id="main" class="page">
 
-<main id=main class=page>
+<nav class="top-nav" aria-label="페이지 이동">
+<a class="top-link" href="index.html">← 메인으로</a>
+<a class="top-link" href="braille.html">점자 읽기</a>
+</nav>
 
-<a class=top-link href=index.html>← 메인으로</a>
-<a class=top-link href=braille.html>점자 읽기</a>
-<div class=badge>#찾았dot 아카이브</div>
-<h1 id=page-title>일상 속 점자 기록</h1>
+<section class="hero" aria-labelledby="page-title">
+<div class="badge">#찾았dot 아카이브</div>
+<h1 id="page-title">일상 속 점자 기록</h1>
 <p>여러 사람이 발견한 점자의 위치와 이야기를 모아두는 공간입니다.</p>
-<a class=button href=https://naver.me/Fx29UT4F<a class=button href=https://naver.me/Fx29UT4F>나도 점자 기록하기 →</a>나도 점자 기록하기 →</a>
-<h2 id=guide-title>아카이브 안내</h2>
+<a class="button" href="https://naver.me/Fx29UT4F<a class="button" href="https://naver.me/Fx29UT4F">나도 점자 기록하기 →</a>나도 점자 기록하기 →</a>
+</section>
+
+<section class="guide" aria-labelledby="guide-title">
+<h2 id="guide-title">아카이브 안내</h2>
 <p>제출된 사진은 두다닷에서 확인한 뒤 일부를 선별해 게시합니다. 개인정보나 얼굴이 보이는 사진은 공개하지 않는 것을 원칙으로 합니다.</p>
-<div class=empty-note>새 기록은 이 페이지에 카드 형태로 차례대로 추가됩니다.</div>
-<p><strong>DODADOT 두다닷</strong></p>
-<p>문의: dodadot@naver.com</p>
+</section>
 
-<section class=archive-grid aria-label=찾았dot 아카이브 목록>
-
-<article class=archive-card>
-<img src=images/archive-sample-01.jpg alt=자판기 버튼 주변에 부착된 점자 사진>
-<div class=card-body>
-<div class=card-meta>
-<span class=chip green>자판기</span>
-<span class=chip>대구</span>
-<span class=chip>2025.05</span>
+<section class="archive-grid" aria-label="찾았dot 아카이브 목록">
+<article class="archive-card">
+<img src="images/archive-sample-01.jpg" alt="자판기 버튼 주변에 부착된 점자 사진">
+<div class="card-body">
+<div class="card-meta">
+<span class="chip green">자판기</span>
+<span class="chip">대구</span>
+<span class="chip">2025.05</span>
 </div>
 <h2>지하철역 자판기에서 발견한 점자</h2>
 <p>음료 선택 버튼 주변에 점자가 붙어 있었어요. 누구나 더 쉽게 읽을 수 있도록 위치와 상태를 함께 기록합니다.</p>
 </div>
 </article>
-<article class=archive-card>
-<img src=images/archive-sample-02.jpg alt=엘리베이터 버튼 옆 점자 표기 사진>
-<div class=card-body>
-<div class=card-meta>
-<span class=chip green>엘리베이터</span>
-<span class=chip>일상공간</span>
-<span class=chip>2025.05</span>
+<article class="archive-card">
+<img src="images/archive-sample-02.jpg" alt="엘리베이터 버튼 옆 점자 표기 사진">
+<div class="card-body">
+<div class="card-meta">
+<span class="chip green">엘리베이터</span>
+<span class="chip">일상공간</span>
+<span class="chip">2025.05</span>
 </div>
 <h2>엘리베이터 버튼 옆 점자</h2>
 <p>자주 지나치는 공간에서도 점자를 발견할 수 있어요. 발견한 점자를 사진과 장소로 남겨주세요.</p>
 </div>
 </article>
-
 </section>
 
-</main>
+<div class="empty-note">새 기록은 이 페이지에 카드 형태로 차례대로 추가됩니다.</div>
 
+<footer class="footer">
+<p><strong>DODADOT 두다닷</strong></p>
+<p>문의: dodadot@naver.com</p>
+</footer>
+
+</main>
 </body>
 </html>
