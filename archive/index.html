@@ -372,16 +372,18 @@ footer strong {
 <div class="card-meta">
 <span class="chip green">자판기</span>
 <span class="chip">대구지하철</span>
-<span class="chip">익명제보</span>
+<span class="chip">봉사자 제보</span>
 </div>
 <h2>지하철역 자판기에서 발견한 점자</h2>
-<div class="braille-line"></div>
-<p class="translation">점역 내용: </p>
-<p>음료 선택 버튼 주변에 점자가 붙어 있지만, 일부가 떼어져서 어떤 음료인지 알기 어려워요.</p>
+<div class="braille-line">⠋⠙⠍⠰⠕⠉⠥
+⠼⠋⠚⠚</div>
+<p class="translation">점역 내용: 카푸치노
+600</p>
+<p>판매 물품은 '오리지널 800원'이지만, 점자로는 '카푸치노 600원'으로 잘못된 정보가 제공되고 있어요.</p>
 </div>
 </article>
 <article class="archive-card" data-category="엘리베이터">
-<img src="images/0002-엘리베이터-신세계백화점.jpg" alt="엘리베이터 버튼 옆 점자 표기 사진">
+<img src="images/0002-엘리베이터-신세계백화점.jpg" alt="엘리베이터 버튼 옆 점자 표기 사진" onclick="openModal(this.src)" class="click-image">
 <div class="card-body">
 <div class="card-meta">
 <span class="chip green">엘리베이터</span>
@@ -394,7 +396,6 @@ footer strong {
 <p>엘리베이터 버튼 속 점자의 숫자는 항상 같은 점형(⠼)으로 시작해요.</p>
 </div>
 </article>
-</section>
 
 <div class="empty-note">새 기록은 이 페이지에 카드 형태로 차례대로 추가됩니다.</div>
 
@@ -440,7 +441,7 @@ function closeModal(event) {
 </script>
 <div id="imageModal" class="image-modal" onclick="closeModal(event)">
 <button class="close-modal" aria-label="닫기">×</button>
-<img id="modalImage" src="" alt="확대 이미지">
+<img id="modalImage" src=" alt="확대 이미지">
 </div>
 </body>
 </html>
