@@ -302,7 +302,7 @@ footer strong {
 <button class="filter-btn" onclick="filterCards('생활용품', this)">생활용품</button>
 <button class="filter-btn" onclick="filterCards('교통시설', this)">교통시설</button>
 <button class="filter-btn" onclick="filterCards('공공시설', this)">공공시설</button>
-<button class="filter-btn" onclick="filterCards('건물/상가', this)">건물/상가</button>
+<button class="filter-btn" onclick="filterCards('상업공간', this)">상업공간</button>
 <button class="filter-btn" onclick="filterCards('기타', this)">기타</button>
 </section>
 
@@ -345,5 +345,25 @@ footer strong {
 </footer>
 
 </main>
+<script>
+function filterCards(category, btn) {
+  const cards = document.querySelectorAll('.archive-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  buttons.forEach(function(button) {
+    button.classList.remove('active');
+  });
+
+  btn.classList.add('active');
+
+  cards.forEach(function(card) {
+    if (category === '전체' || card.dataset.category === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
 </body>
 </html>
