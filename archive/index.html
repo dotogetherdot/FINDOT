@@ -1,5 +1,5 @@
-"<!DOCTYPE html>
-<html ang="ko">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -135,6 +135,7 @@ h1 {
   grid-template-columns: 1fr;
   gap: 16px;
   margin-top: 18px;
+  align-items: start;
 }
 
 @media (min-width: 640px) {
@@ -148,6 +149,7 @@ h1 {
   border: 2px solid var(--black);
   border-radius: 20px;
   background: var(--white);
+  align-self: start;
 }
 
 .archive-card img {
@@ -194,6 +196,7 @@ h1 {
   margin: 0;
   color: var(--gray-700);
   font-size: 15px;
+  line-height: 1.55;
 }
 
 .braille-line {
@@ -205,6 +208,9 @@ h1 {
   line-height: 1.2;
   letter-spacing: 2px;
   font-weight: 700;
+  white-space: pre-line;
+  word-break: keep-all;
+  min-height: auto;
 }
 
 .translation {
@@ -223,6 +229,9 @@ h1 {
   color: var(--gray-700);
   text-align: center;
   font-weight: 700;
+  width: 100%;
+.empty-note {
+  grid-column: 1 / -1;
 }
 
 footer {
@@ -296,6 +305,7 @@ footer strong {
   max-height: 86vh;
   border-radius: 18px;
   background: #fff;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
 }
 
 .close-modal {
@@ -313,14 +323,11 @@ footer strong {
   cursor: pointer;
 }
 
-.braille-line {
-  white-space: pre-line;
-  word-break: keep-all;
-  min-height: auto;
-}
-
-.empty-note {
-  width: 100%;
+.archive-count {
+  margin: 10px 0 0;
+  color: var(--gray-700);
+  font-size: 14px;
+  font-weight: 800;
 }
 </style>
 </head>
@@ -355,6 +362,7 @@ footer strong {
 <button class="filter-btn" onclick="filterCards('상업공간', this)">상업공간</button>
 <button class="filter-btn" onclick="filterCards('기타', this)">기타</button>
 </section>
+<p id="archiveCount" class="archive-count">전체 0개 기록</p>
 
 <section class="archive-grid" aria-label="찾았dot 아카이브 목록">
 <article class="archive-card" data-category="자판기">
@@ -401,6 +409,7 @@ footer strong {
 function filterCards(category, btn) {
   const cards = document.querySelectorAll('.archive-card');
   const buttons = document.querySelectorAll('.filter-btn');
+  let visibleCount = 0;
 
   buttons.forEach(function(button) {
     button.classList.remove('active');
@@ -411,10 +420,14 @@ function filterCards(category, btn) {
   cards.forEach(function(card) {
     if (category === '전체' || card.dataset.category === category) {
       card.style.display = '';
+      visibleCount++;
     } else {
       card.style.display = 'none';
     }
   });
+
+  document.getElementById('archiveCount').textContent =
+    category + ' ' + visibleCount + '개 기록';
 }
 
 function openModal(src) {
@@ -430,6 +443,13 @@ function closeModal(event) {
     document.getElementById('imageModal').classList.remove('active');
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const activeBtn = document.querySelector('.filter-btn.active');
+  if (activeBtn) {
+    filterCards('전체', activeBtn);
+  }
+});
 </script>
 <div id="imageModal" class="image-modal" onclick="closeModal(event)">
 <button class="close-modal" aria-label="닫기">×</button>
