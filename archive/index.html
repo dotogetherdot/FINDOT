@@ -272,6 +272,65 @@ footer strong {
   border: 2px solid var(--black);
 }
 
+.click-image {
+  cursor: zoom-in;
+}
+
+.image-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.82);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image-modal.active {
+  display: flex;
+}
+
+.image-modal img {
+  max-width: min(92vw, 900px);
+  max-height: 86vh;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.close-modal {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font-size: 28px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.click-image {
+  cursor: zoom-in;
+}
+
+.image-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.82);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image-modal.active {
+  display: flex;
+}
 </style>
 </head>
 <body>
@@ -308,7 +367,7 @@ footer strong {
 
 <section class="archive-grid" aria-label="찾았dot 아카이브 목록">
 <article class="archive-card" data-category="자판기">
-<img src="images/0001-자판기-대구지하철.jpg" alt="자판기 버튼 주변에 부착된 점자 사진">
+<img src="images/0001-자판기-대구지하철.jpg" alt="자판기 버튼 주변에 부착된 점자 사진" onclick="openModal(this.src)" class="click-image">
 <div class="card-body">
 <div class="card-meta">
 <span class="chip green">자판기</span>
@@ -364,6 +423,24 @@ function filterCards(category, btn) {
     }
   });
 }
+
+function openModal(src) {
+  document.getElementById('modalImage').src = src;
+  document.getElementById('imageModal').classList.add('active');
+}
+
+function closeModal(event) {
+  if (
+    event.target.id === 'imageModal' ||
+    event.target.classList.contains('close-modal')
+  ) {
+    document.getElementById('imageModal').classList.remove('active');
+  }
+}
 </script>
+<div id="imageModal" class="image-modal" onclick="closeModal(event)">
+<button class="close-modal" aria-label="닫기">×</button>
+<img id="modalImage" src="" alt="확대 이미지">
+</div>
 </body>
 </html>
