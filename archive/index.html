@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="ko">
+"<!DOCTYPE html>
+<html ang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -313,23 +313,14 @@ footer strong {
   cursor: pointer;
 }
 
-.click-image {
-  cursor: zoom-in;
+.braille-line {
+  white-space: pre-line;
+  word-break: keep-all;
+  min-height: auto;
 }
 
-.image-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(0,0,0,0.82);
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.image-modal.active {
-  display: flex;
+.empty-note {
+  width: 100%;
 }
 </style>
 </head>
@@ -396,6 +387,7 @@ footer strong {
 <p>엘리베이터 버튼 속 점자의 숫자는 항상 같은 점형(⠼)으로 시작해요.</p>
 </div>
 </article>
+</section>
 
 <div class="empty-note">새 기록은 이 페이지에 카드 형태로 차례대로 추가됩니다.</div>
 
@@ -441,7 +433,7 @@ function closeModal(event) {
 </script>
 <div id="imageModal" class="image-modal" onclick="closeModal(event)">
 <button class="close-modal" aria-label="닫기">×</button>
-<img id="modalImage" src=" alt="확대 이미지">
+<img id="modalImage" src="" alt="확대 이미지">
 </div>
 </body>
 </html>
