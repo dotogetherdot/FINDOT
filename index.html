@@ -59,7 +59,7 @@ h1 {
 }
 
 .guide-image {
-  margin: 18px 0;
+  margin: 26px 0 14px;
   border-radius: 18px;
   overflow: hidden;
   background: #f7f7f7;
@@ -119,6 +119,19 @@ h1 {
   color: #111;
 }
 
+.hero-card .button {
+  margin-top: 14px;
+}
+
+.hero-card .button.secondary {
+  background: #fff;
+  color: #111;
+}
+
+.project-desc + .button {
+  margin-top: 12px;
+}
+
 .project-desc {
   margin: 18px 0;
   padding: 20px;
@@ -143,6 +156,33 @@ h1 {
     min-height: 220px;
   }
 }
+
+.project-card {
+  margin: 18px 0;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 18px;
+}
+
+.project-card .project-desc {
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.project-card .button {
+  margin-top: 14px;
+}
+
+.step-group {
+  margin-bottom: 24px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
 </style>
 </head>
 <body>
@@ -151,17 +191,21 @@ h1 {
 <div class="badge">#찾았dot #두다닷</div>
 <h1 id="page-title">점자를 발견했다면, 찾았dot!</h1>
 <p class="hero-desc">일상 속 점자를 발견하고 기록하며, 점자 접근성을 함께 살펴보는 두다닷의 시민참여 프로젝트입니다. 본 프로젝트는 한국자원봉사단협의회의 'K-자원봉사단' 지원사업의 일환으로 운영되고 있습니다.</p>
+<a class="button green" href="https://naver.me/Fx29UT4F">#찾았dot 제출용 네이버 폼</a>
+<a class="button secondary" href="https://dotogetherdot.github.io/FINDOT/archive/">기록모음: #찾았dot 아카이브</a>
 </section>
 <div class="guide-image"><img src="https://dotogetherdot.github.io/FINDOT/guide-card.png" alt="찾았dot 참여 방법 카드뉴스"></div>
+<section class="step-group">
 <li class="step-item">1. 일상 속 점자를 발견해요</li>
 <li class="step-item">2. 명함과 함께 점자를 사진에 담아요</li>
 <li class="step-item">3. 아래의 네이버 폼에 사진과 장소를 남겨요</li>
 <p class="sns-note">(+) 스토리에 공유할 땐 @do_dadot · #찾았dot 태그</p>
-<a class="button green" href="https://naver.me/Fx29UT4F">#찾았dot 제출용 네이버 폼</a>
+</section>
+<section class="project-card">
 <p class="project-desc">‘찾았dot’은 일상 속 점자의 위치와 상태를 함께 기록하는 두다닷의 시민참여 프로젝트입니다. 우리가 지나치는 공간 속 점자를 발견하고 기록하며, 점자가 실제로 읽히고 이해될 수 있는 환경인지 함께 살펴봅니다. 모인 기록은 점자 접근성 개선 활동과 제보 자료로 활용됩니다.</p>
-<a class="button secondary" href="https://dotogetherdot.github.io/FINDOT/archive/">기록모음: #찾았dot 아카이브</a>
 <a class="button secondary" href="https://dotogetherdot.github.io/FINDOT/braille/">점자표와 번역기 보기</a>
 <a class="button" href="https://instagram.com/do_dadot">두다닷 인스타그램 보기</a>
+</section>
 </main>
 </body>
 </html>
