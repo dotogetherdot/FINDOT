@@ -248,6 +248,30 @@ footer strong {
 .footer strong {
   color: var(--black);
 }
+
+.filter-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 4px;
+}
+
+.filter-btn {
+  padding: 8px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: var(--yellow);
+  border: 2px solid var(--black);
+}
+
 </style>
 </head>
 <body>
@@ -271,13 +295,13 @@ footer strong {
 </section>
 
 <section class="archive-grid" aria-label="찾았dot 아카이브 목록">
-<article class="archive-card">
+<article class="archive-card" data-category="자판기">
 <img src="images/archive-2026-01.jpg" alt="자판기 버튼 주변에 부착된 점자 사진">
 <div class="card-body">
 <div class="card-meta">
 <span class="chip green">자판기</span>
 <span class="chip">대구지하철</span>
-<span class="chip">2025.05</span>
+<span class="chip">익명제보</span>
 </div>
 <h2>지하철역 자판기에서 발견한 점자</h2>
 <div class="braille-line"></div>
@@ -285,13 +309,13 @@ footer strong {
 <p>음료 선택 버튼 주변에 점자가 붙어 있지만, 일부가 떼어져서 어떤 음료인지 알기 어려워요.</p>
 </div>
 </article>
-<article class="archive-card">
+<article class="archive-card" data-category="엘리베이터">
 <img src="images/archive-2026-02.jpg" alt="엘리베이터 버튼 옆 점자 표기 사진">
 <div class="card-body">
 <div class="card-meta">
 <span class="chip green">엘리베이터</span>
-<span class="chip">엘리베이터</span>
-<span class="chip">2025.05</span>
+<span class="chip">집 앞 엘리베이터</span>
+<span class="chip">두다닷 부원</span>
 </div>
 <h2>엘리베이터 숫자 버튼의 점자</h2>
 <div class="braille-line">⠼⠁ / ⠼⠃</div>
@@ -309,5 +333,25 @@ footer strong {
 </footer>
 
 </main>
+<script>
+function filterCards(category, btn) {
+  const cards = document.querySelectorAll('.archive-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  buttons.forEach(function(button) {
+    button.classList.remove('active');
+  });
+
+  btn.classList.add('active');
+
+  cards.forEach(function(card) {
+    if (category === '전체' || card.dataset.category === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
 </body>
 </html>
