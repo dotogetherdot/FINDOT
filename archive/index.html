@@ -294,6 +294,18 @@ footer strong {
 <p>제출된 사진은 두다닷에서 확인한 뒤 일부를 선별해 게시합니다. 개인정보나 얼굴이 보이는 사진은 공개하지 않는 것을 원칙으로 합니다.</p>
 </section>
 
+<section class="filter-box" aria-label="카테고리별 모아보기">
+<button class="filter-btn active" onclick="filterCards('전체', this)">전체</button>
+<button class="filter-btn" onclick="filterCards('자판기', this)">자판기</button>
+<button class="filter-btn" onclick="filterCards('엘리베이터', this)">엘리베이터</button>
+<button class="filter-btn" onclick="filterCards('표지판', this)">표지판</button>
+<button class="filter-btn" onclick="filterCards('생활용품', this)">생활용품</button>
+<button class="filter-btn" onclick="filterCards('교통시설', this)">교통시설</button>
+<button class="filter-btn" onclick="filterCards('공공시설', this)">공공시설</button>
+<button class="filter-btn" onclick="filterCards('건물/상가', this)">건물/상가</button>
+<button class="filter-btn" onclick="filterCards('기타', this)">기타</button>
+</section>
+
 <section class="archive-grid" aria-label="찾았dot 아카이브 목록">
 <article class="archive-card" data-category="자판기">
 <img src="images/archive-2026-01.jpg" alt="자판기 버튼 주변에 부착된 점자 사진">
@@ -333,25 +345,5 @@ footer strong {
 </footer>
 
 </main>
-<script>
-function filterCards(category, btn) {
-  const cards = document.querySelectorAll('.archive-card');
-  const buttons = document.querySelectorAll('.filter-btn');
-
-  buttons.forEach(function(button) {
-    button.classList.remove('active');
-  });
-
-  btn.classList.add('active');
-
-  cards.forEach(function(card) {
-    if (category === '전체' || card.dataset.category === category) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
-</script>
 </body>
 </html>
