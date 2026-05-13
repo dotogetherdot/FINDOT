@@ -196,6 +196,24 @@ h1 {
   font-size: 15px;
 }
 
+.braille-line {
+  margin: 10px 0 6px;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--gray-100);
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.translation {
+  margin: 0 0 10px;
+  color: var(--black);
+  font-size: 15px;
+  font-weight: 800;
+}
+
 .empty-note {
   margin-top: 18px;
   padding: 18px;
@@ -254,27 +272,31 @@ footer strong {
 
 <section class="archive-grid" aria-label="찾았dot 아카이브 목록">
 <article class="archive-card">
-<img src="images/archive-sample-01.jpg" alt="자판기 버튼 주변에 부착된 점자 사진">
+<img src="images/archive-2026-01.jpg" alt="자판기 버튼 주변에 부착된 점자 사진">
 <div class="card-body">
 <div class="card-meta">
 <span class="chip green">자판기</span>
-<span class="chip">대구</span>
+<span class="chip">대구지하철</span>
 <span class="chip">2025.05</span>
 </div>
 <h2>지하철역 자판기에서 발견한 점자</h2>
-<p>음료 선택 버튼 주변에 점자가 붙어 있었어요. 누구나 더 쉽게 읽을 수 있도록 위치와 상태를 함께 기록합니다.</p>
+<div class="braille-line"></div>
+<p class="translation">점역 내용: </p>
+<p>음료 선택 버튼 주변에 점자가 붙어 있지만, 일부가 떼어져서 어떤 음료인지 알기 어려워요.</p>
 </div>
 </article>
 <article class="archive-card">
-<img src="images/archive-sample-02.jpg" alt="엘리베이터 버튼 옆 점자 표기 사진">
+<img src="images/archive-2026-02.jpg" alt="엘리베이터 버튼 옆 점자 표기 사진">
 <div class="card-body">
 <div class="card-meta">
 <span class="chip green">엘리베이터</span>
-<span class="chip">일상공간</span>
+<span class="chip">엘리베이터</span>
 <span class="chip">2025.05</span>
 </div>
-<h2>엘리베이터 버튼 옆 점자</h2>
-<p>자주 지나치는 공간에서도 점자를 발견할 수 있어요. 발견한 점자를 사진과 장소로 남겨주세요.</p>
+<h2>엘리베이터 숫자 버튼의 점자</h2>
+<div class="braille-line">⠼⠁ / ⠼⠃</div>
+<p class="translation">점역 내용: 1 / 2</p>
+<p>엘리베이터 버튼 속 점자의 숫자는 항상 같은 점형(⠼)으로 시작해요.</p>
 </div>
 </article>
 </section>
