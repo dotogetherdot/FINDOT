@@ -3,209 +3,367 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>찾았dot | 두다닷</title>
+<title>찾았dot 아카이브 | 두다닷</title>
 <style>
+:root {
+  --green: #03c75a;
+  --yellow: #ffd84d;
+  --black: #111111;
+  --gray-700: #555555;
+  --gray-300: #dddddd;
+  --gray-100: #f5f5f5;
+  --cream: #fffdf4;
+  --white: #ffffff;
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #fffdf4;
-  color: #111;
+  background: var(--cream);
+  color: var(--black);
   line-height: 1.6;
   word-break: keep-all;
 }
 
-.page {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 28px 18px 44px;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.page > * {
+img {
   max-width: 100%;
+  display: block;
+}
+
+.page {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: 18px 16px 40px;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.top-link {
+  padding: 8px 10px;
+  border: 1px solid var(--gray-300);
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.hero {
+  padding: 22px 18px 20px;
+  border: 2px solid var(--black);
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: 6px 6px 0 var(--black);
 }
 
 .badge {
   display: inline-block;
-  padding: 7px 12px;
-  background: #ffd84d;
-  border: 2px solid #111;
+  padding: 5px 10px;
+  background: var(--yellow);
+  border: 2px solid var(--black);
   border-radius: 999px;
-  font-size: 15px;
-  font-weight: 900;
-  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: 850;
+  margin-bottom: 12px;
 }
-.hero-card {
-  padding: 22px 18px 20px;
-  border: 2px solid #111;
-  border-radius: 24px;
-  background: #fff;
-  box-shadow: 6px 6px 0 #111;
-  margin-bottom: 22px;
-}
+
 h1 {
-  margin: 0 0 14px;
-  font-size: 34px;
-  line-height: 1.2;
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.15;
   letter-spacing: -0.04em;
 }
 
-.hero-desc {
-  margin: 0 0 22px;
-  color: #333;
-  font-size: 18px;
-  font-weight: 650;
-  line-height: 1.7;
-  word-break: keep-all;
-}
-
-.guide-image {
-  margin: 26px 0 14px;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #f7f7f7;
-}
-
-.guide-image img {
-  width: 100%;
-  display: block;
-  border-radius: 18px;
-}
-
-.step-item {
-  list-style: none;
-  margin: 10px 0;
-  padding: 16px 18px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  font-size: 17px;
-  font-weight: 800;
-}
-
-.sns-note {
-  margin: 16px 0;
-  padding: 16px 18px;
-  background: #fff7d6;
-  border: 1.5px solid #ffd84d;
-  border-radius: 16px;
+.hero p {
+  margin: 10px 0 0;
+  color: var(--gray-700);
   font-size: 16px;
-  font-weight: 850;
+  font-weight: 650;
 }
 
 .button {
   display: block;
   width: 100%;
   margin-top: 12px;
-  padding: 17px 18px;
-  border: 2px solid #111;
-  border-radius: 16px;
-  background: #111;
-  color: #fff;
+  padding: 15px 16px;
+  border: 2px solid var(--black);
+  border-radius: 14px;
+  background: var(--black);
+  color: var(--white);
   text-align: center;
   font-size: 17px;
-  font-weight: 900;
-  text-decoration: none;
-  box-sizing: border-box;
+  font-weight: 850;
 }
 
-.button.green {
-  background: #03c75a;
-  color: #111;
+.guide {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  background: var(--white);
 }
 
-.button.secondary {
-  background: #fff;
-  color: #111;
+.guide h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  letter-spacing: -0.03em;
 }
 
-.hero-card .button {
-  margin-top: 14px;
+.guide p {
+  margin: 0;
+  color: var(--gray-700);
+  font-size: 15px;
 }
 
-.hero-card .button.secondary {
-  background: #fff;
-  color: #111;
+.archive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 18px;
 }
 
-.project-desc + .button {
-  margin-top: 12px;
-}
-
-.project-desc {
-  margin: 18px 0;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 18px;
-  color: #333;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-@media (min-width: 700px) {
-  .page {
-    max-width: 760px;
-  }
-
-  h1 {
-    font-size: 38px;
-  }
-
-  .guide-image {
-    min-height: 220px;
+@media (min-width: 640px) {
+  .archive-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-.project-card {
-  margin: 18px 0;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 18px;
-}
-
-.project-card .project-desc {
-  margin: 0 0 14px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-}
-
-.project-card .button {
-  margin-top: 14px;
-}
-
-.step-group {
-  margin-bottom: 24px;
-  padding: 18px;
-  background: #fff;
-  border: 1px solid #ddd;
+.archive-card {
+  overflow: hidden;
+  border: 2px solid var(--black);
   border-radius: 20px;
+  background: var(--white);
 }
+
+.archive-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--gray-100);
+  border-bottom: 2px solid var(--black);
+}
+
+.card-body {
+  padding: 14px;
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.chip {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--gray-100);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.chip.green {
+  background: var(--green);
+  color: var(--black);
+}
+
+.archive-card h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+}
+
+.archive-card p {
+  margin: 0;
+  color: var(--gray-700);
+  font-size: 15px;
+}
+
+.braille-line {
+  margin: 10px 0 6px;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--gray-100);
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.translation {
+  margin: 0 0 10px;
+  color: var(--black);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.empty-note {
+  margin-top: 18px;
+  padding: 18px;
+  border: 2px dashed var(--gray-300);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--gray-700);
+  text-align: center;
+  font-weight: 700;
+}
+
+footer {
+  margin-top: 24px;
+  padding: 16px;
+  text-align: center;
+  color: var(--gray-700);
+  font-size: 14px;
+}
+
+footer strong {
+  color: var(--black);
+}
+
+.footer {
+  margin-top: 24px;
+  padding: 16px;
+  text-align: center;
+  color: var(--gray-700);
+  font-size: 14px;
+}
+
+.footer strong {
+  color: var(--black);
+}
+
+.filter-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 4px;
+}
+
+.filter-btn {
+  padding: 8px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: var(--yellow);
+  border: 2px solid var(--black);
+}
+
 </style>
 </head>
 <body>
-<main class="page">
-<section class="hero-card">
-<div class="badge">#찾았dot #두다닷</div>
-<h1 id="page-title">점자를 발견했다면, 찾았dot!</h1>
-<p class="hero-desc">일상 속 점자를 발견하고 기록하며, 점자 접근성을 함께 살펴보는 두다닷의 시민참여 프로젝트입니다. 본 프로젝트는 한국자원봉사단협의회의 'K-자원봉사단' 지원사업의 일환으로 운영되고 있습니다.</p>
-<a class="button green" href="https://naver.me/Fx29UT4F">#찾았dot 제출용 네이버 폼</a>
-<a class="button secondary" href="https://dotogetherdot.github.io/FINDOT/archive/">기록모음: #찾았dot 아카이브</a>
+<main id="main" class="page">
+
+<nav class="top-nav" aria-label="페이지 이동">
+<a class="top-link" href="../">← 메인으로</a>
+<a class="top-link" href="../braille/">점자 읽기</a>
+</nav>
+
+<section class="hero" aria-labelledby="page-title">
+<div class="badge">#찾았dot 아카이브</div>
+<h1 id="page-title">일상 속 점자 기록</h1>
+<p>여러 사람이 발견한 점자의 위치와 이야기를 모아두는 공간입니다.</p>
+<a class="button" href="https://naver.me/Fx29UT4F">나도 점자 기록하기 →</a>
 </section>
-<div class="guide-image"><img src="https://dotogetherdot.github.io/FINDOT/guide-card.png" alt="찾았dot 참여 방법 카드뉴스"></div>
-<section class="step-group">
-<li class="step-item">1. 일상 속 점자를 발견해요</li>
-<li class="step-item">2. 명함과 함께 점자를 사진에 담아요</li>
-<li class="step-item">3. 아래의 네이버 폼에 사진과 장소를 남겨요</li>
-<p class="sns-note">(+) 스토리에 공유할 땐 @do_dadot · #찾았dot 태그</p>
+
+<section class="guide" aria-labelledby="guide-title">
+<h2 id="guide-title">아카이브 안내</h2>
+<p>제출된 사진은 두다닷에서 확인한 뒤 일부를 선별해 게시합니다. 개인정보나 얼굴이 보이는 사진은 공개하지 않는 것을 원칙으로 합니다.</p>
 </section>
-<section class="project-card">
-<p class="project-desc">‘찾았dot’은 일상 속 점자의 위치와 상태를 함께 기록하는 두다닷의 시민참여 프로젝트입니다. 우리가 지나치는 공간 속 점자를 발견하고 기록하며, 점자가 실제로 읽히고 이해될 수 있는 환경인지 함께 살펴봅니다. 모인 기록은 점자 접근성 개선 활동과 제보 자료로 활용됩니다.</p>
-<a class="button secondary" href="https://dotogetherdot.github.io/FINDOT/braille/">점자표와 번역기 보기</a>
-<a class="button" href="https://instagram.com/do_dadot">두다닷 인스타그램 보기</a>
+
+<section class="filter-box" aria-label="카테고리별 모아보기">
+<button class="filter-btn active" onclick="filterCards('전체', this)">전체</button>
+<button class="filter-btn" onclick="filterCards('자판기', this)">자판기</button>
+<button class="filter-btn" onclick="filterCards('엘리베이터', this)">엘리베이터</button>
+<button class="filter-btn" onclick="filterCards('표지판', this)">표지판</button>
+<button class="filter-btn" onclick="filterCards('생활용품', this)">생활용품</button>
+<button class="filter-btn" onclick="filterCards('교통시설', this)">교통시설</button>
+<button class="filter-btn" onclick="filterCards('공공시설', this)">공공시설</button>
+<button class="filter-btn" onclick="filterCards('상업공간', this)">상업공간</button>
+<button class="filter-btn" onclick="filterCards('기타', this)">기타</button>
 </section>
+
+<section class="archive-grid" aria-label="찾았dot 아카이브 목록">
+<article class="archive-card" data-category="자판기">
+<img src="images/archive-2026-01.jpg" alt="자판기 버튼 주변에 부착된 점자 사진">
+<div class="card-body">
+<div class="card-meta">
+<span class="chip green">자판기</span>
+<span class="chip">대구지하철</span>
+<span class="chip">익명제보</span>
+</div>
+<h2>지하철역 자판기에서 발견한 점자</h2>
+<div class="braille-line"></div>
+<p class="translation">점역 내용: </p>
+<p>음료 선택 버튼 주변에 점자가 붙어 있지만, 일부가 떼어져서 어떤 음료인지 알기 어려워요.</p>
+</div>
+</article>
+<article class="archive-card" data-category="엘리베이터">
+<img src="images/archive-2026-02.jpg" alt="엘리베이터 버튼 옆 점자 표기 사진">
+<div class="card-body">
+<div class="card-meta">
+<span class="chip green">엘리베이터</span>
+<span class="chip">집 앞 엘리베이터</span>
+<span class="chip">두다닷 부원</span>
+</div>
+<h2>엘리베이터 숫자 버튼의 점자</h2>
+<div class="braille-line">⠼⠁ / ⠼⠃</div>
+<p class="translation">점역 내용: 1 / 2</p>
+<p>엘리베이터 버튼 속 점자의 숫자는 항상 같은 점형(⠼)으로 시작해요.</p>
+</div>
+</article>
+</section>
+
+<div class="empty-note">새 기록은 이 페이지에 카드 형태로 차례대로 추가됩니다.</div>
+
+<footer class="footer">
+<p><strong>DODADOT 두다닷</strong></p>
+<p>문의: dodadot@naver.com</p>
+</footer>
+
 </main>
+<script>
+function filterCards(category, btn) {
+  const cards = document.querySelectorAll('.archive-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  buttons.forEach(function(button) {
+    button.classList.remove('active');
+  });
+
+  btn.classList.add('active');
+
+  cards.forEach(function(card) {
+    if (category === '전체' || card.dataset.category === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
 </body>
 </html>
